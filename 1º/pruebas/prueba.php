@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
 </head>
 <body>
 <?php
+/*
 	$usuario[0]["nombre"]="ana";
 	$usuario[0]["apellido"]="romero";
 	$usuario[1]["nombre"]="ann";
@@ -24,7 +26,7 @@ for ($i=0,$i<$maxusuarios;i++){
 
 	echo "<tr>";
 	echo"<td>{$usuarios[$i]["nombre"]}</td>";
-}
+}*/
 ?>
 </body>
 </html>
