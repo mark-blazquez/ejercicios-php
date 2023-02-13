@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejer1</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<div>
+		<form action="datos_alumno.php"method="POST">
+			<h1>datos del alumno</h1>
+			<label>introduzca su nombre </label><input type="text" name="nombre"/><br/>
+			<label>introduzca su telefono </label><input type="text" name="numero"  maxlength="9" /><br/>
+			matriculado<input type="checkbox" name="matricula"><br/>
+			<h2>enseñanza</h2> 
+			<input type="radio" name="curso" value="secundaria" />secundaria
+			<input type="radio" name="curso" value="bachillerato" />bachillerato
+			<input type="radio" name="curso" value="medio" />medio
+			<input type="radio" name="curso" value="superior" />superior</br>
+			<select name="opcion">
+				<option  value="pantalla" >por pantalla</option>
+				<option  value="archivo" >en archivo datos.txt</option>
+			</select></br>
+			<input type="submit" name="submit">
+		</form>
+	</div>
+</body>
+</html>

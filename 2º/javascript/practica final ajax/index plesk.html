@@ -1,0 +1,308 @@
+<!DOCTYPE >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>OBTAINDATA</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		.oculto { display: none; }
+		.visible { display: inline; }
+		#accordion .ui-accordion-header { background: #fff; }
+		#accordion .ui-accordion-header.ui-state-active { background: grey; }
+		#accordion1 .ui-accordion-header { background: #fff; }
+		#accordion1 .ui-accordion-header.ui-state-active { background: grey; }
+		.anotherNewClass { text-indent: 40px; letter-spacing: .2em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.1em; }
+		.newClass { width: 240px;  padding: 1em; letter-spacing: 0; margin: 0; }
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+		<div class="container-fluid ">
+			<img src="https://logodownload.org/wp-content/uploads/2014/10/youtube-logo-2-3.png" alt="" width="300" height="75" class="d-inline-block align-top">
+
+			<div >
+				<h1 class="navbar-brand c-light" href="#">OBTAINDATA</h1>
+			  	<p class="nav-item">aplicacion desarrollada por mark blazquez</p>
+			</div>
+			<!-- este es el boton de iniciar sesion que llama a la api y a la funcion mostrarboton para poner el cuerpo visible una vez que ha cargado-->
+			<div >
+				<button onclick="authenticate().then(loadClient).then(mostrarboton)" type="button" class="btn btn-danger">iniciar sesion</button></li>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div id="intro">
+			<div class="d-flex justify-content-center">
+				<h1>informacion importante</h1>
+			</div>
+			<div class="d-flex justify-content-center">
+				<p>Esta aplicacion recoge los datos de tu cuenta youtube para procesarlos y mostrarte informacion sobre ellos, si estas de acuerdo inicia sesion pulsando en el boton, luego selecciona la informacion que deseas mostrar, si tus videos subidos o tu lista de reproduccion</p></br>
+			</div>
+		</div>
+		<div id="oculto" class="oculto">
+			<div id="instrucciones"  >
+				<div class="d-flex justify-content-center">
+					<h1>instrucciones de uso</h1>
+				</div>
+				<div class="d-flex justify-content-center">
+					<p>selecciona el elemento de el que deseas obtener informacion y pulsa su boton, copia y pega todos los datos que aparecen en la ventana en un documento nuevo en tu escritorio y llama a este archivo nuevo "ejemplo.json" acto seguido sube el archivo</p>
+				</div>
+			</div>
+			<!-- div donde seran mostrados los json cuando los botones sean pulsados-->
+			<div id="tabs">
+				<ul>
+				  <li class="bg-light"><a class="bg-light" href="#tabs-1"><button  onclick="execute()" type="button" class="btn btn-danger">lista de reproduccion</button></a></li>
+				  <li class="bg-light"><a class="bg-light" href="#tabs-2"><button  onclick="execute1()" type="button" class="btn btn-danger">videos subidos</button></a></li>
+				</ul>
+				<div id="tabs-1"  >
+					<h3>tu lista de reproduccion</h3>
+					<div >
+						<pre id="listareproduccion"></pre>
+					</div>
+				</div>
+
+				<div id="tabs-2" >
+						<h3>videos subidos</h3>
+						<div >
+							<pre id="videossubidos"></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- formulario que me permite subir un archivo al servidor en este caso sera un json con el contenido obtenido de la api d google -->
+			<div id="oculto2" class="oculto">
+				<div class="d-flex justify-content-center">
+					<h1>subida de archivos</h1>
+				</div>
+				<div class="d-flex justify-content-center">
+					<div class="d-flex justify-content-center">
+						<form action="pagina.php" method="post" enctype="multipart/form-data" target="_blank">
+							<p>
+								Sube un archivo:
+								<input type="hidden" name="acc" value="envio">
+								<input type="file"  name="archivosubido" required>
+								<input type="submit" class="btn btn-danger" onclick="mostrar()" value="Enviar datos">
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- div se recupera la informacion de los json con una llamada ajax-->
+			<id id="instrucciones2" class="oculto">
+				<div >
+					<h1 class="d-flex justify-content-center">obten tus datos</h1>
+					<p class="d-flex justify-content-center">si quieres ver los otros datos sube de nuevo un archivo con lo que has copiado de arriba y dale al boton que no has pulsado antes</p>
+				</div>
+				<div class="d-flex justify-content-center">
+					<button id="" type="button" onclick="obtenerdatoslista()" class="btn btn-danger" >lista reproduccion</button>
+					<button id="boton1" type="button" onclick="obtenerdatosvideo()" class="btn btn-danger" >videos subidos</button>
+				</div>
+				<div class="d-flex">
+					<div id="accordion" class="float-left">
+						<h3>recupera los valores de la lista de reproduccion pulsando el boton de arriba</h3>
+						<div id="listafinal" >
+							
+						</div>
+					</div>
+					<div class="toggler" class="float-right">
+						<button id="boton2"class="ui-state-default ui-corner-all">recupera los valores de los videos pulsando el boton de arriba(pulsa aqui y veras un efecto)</button>
+						<div id="videosfinal" class="newClass ui-corner-all">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+	<!--codigo jquery-->
+	<script>
+	//jquueryui
+		//funcion para que funcione el acordeon
+		$( function() {
+			$( "#accordion" ).accordion({
+				collapsible: true,
+				heightStyle: "content"
+			});			
+		} );
+
+		//funcion para que funcione lo d las ventanas
+		$( function() {
+			$( "#tabs" ).tabs({
+			collapsible: true
+			});
+		} );
+
+		//funcion para que se haga grande el recuadro y cambie los estilos
+		$( function() {
+			$( "#boton2" ).on( "click", function() {
+			$( ".newClass" ).switchClass( "newClass", "anotherNewClass", 1000 );
+			$( ".anotherNewClass" ).switchClass( "anotherNewClass", "newClass", 1000 );
+			});
+		} );
+
+
+		//funcion ajax que recupera los datos del servidor de la lista de reproduccion
+		function obtenerdatoslista(){
+			$.ajax({
+				type: "GET",
+				//url: 'http://localhost:8080/ejer/2%c2%ba/javascript/practica%20final%20ajax/documento.json' ,
+				url: 'https://markblazquez.informaticailiberis.com/practica%20final%20ajaxjqueryui/documento.json' ,
+				dataType: "json",
+				success: function(respuesta) {
+					alert('datos obtenidos!');
+					//var url="http://localhost:8080/ejer/2%c2%ba/javascript/practica%20final%20ajax/documento.json"
+					var url="https://markblazquez.informaticailiberis.com/practica%20final%20ajaxjqueryui/documento.json" 
+					$.getJSON(url,function (data1) {
+						for (var z in data1.items){
+							var titulolista=data1.items[z]["snippet"].title
+							var fecha=data1.items[z]["snippet"].publishedAt
+							var urlimagen=data1.items[z]["snippet"].thumbnails.default.url
+							$("#listafinal").append("<strong>nombre de la lista de reproduccion:</strong>")
+							$("#listafinal").append(titulolista+"</br>")
+							$("#listafinal").append("<strong>fecha de creacion:</strong>")
+							$("#listafinal").append(fecha+"</br>")
+							$("#listafinal").append("<strong>miniatura de la lista:</strong>")
+							$("#listafinal").append("<img src='"+urlimagen+"''></br>")
+							$("#listafinal").append("------------------</br>")
+						}
+					})					
+				},
+				error: function() {
+					alert('error!');
+				}
+			});
+		}
+	
+		//funcion ajax que recupera los datos del servidor de los videos
+		function obtenerdatosvideo(){
+			$.ajax({
+				type: "GET",
+				//url: 'http://localhost:8080/ejer/2%c2%ba/javascript/practica%20final%20ajax/documento.json' ,
+				url: 'https://markblazquez.informaticailiberis.com/practica%20final%20ajaxjqueryui/documento.json' ,
+				dataType: "json",
+				success: function(respuesta1) {
+					alert('datos obtenidos!');
+					//var url="http://localhost:8080/ejer/2%c2%ba/javascript/practica%20final%20ajax/documento.json"
+					var url="https://markblazquez.informaticailiberis.com/practica%20final%20ajaxjqueryui/documento.json"
+					$.getJSON(url,function (data) {
+						for (var k in data.items){
+							var titulovideo=data.items[k]["snippet"].title
+							var fecha=data.items[k]["snippet"].publishedAt
+							var descripcion=data.items[k]["snippet"].description
+							var urlimagen=data.items[k]["snippet"].thumbnails.default.url
+							$("#videosfinal").append("<strong>nombre de el video:</strong>")
+							$("#videosfinal").append(titulovideo+"</br>")
+							$("#videosfinal").append("<strong>fecha de creacion:</strong>")
+							$("#videosfinal").append(fecha+"</br>")
+							$("#videosfinal").append("<strong>descripcion del video:</strong>")
+							$("#videosfinal").append(descripcion+"</br>")
+							$("#videosfinal").append("<strong>miniatura del video:</strong>")
+							$("#videosfinal").append("<img src='"+urlimagen+"''></br>")
+							$("#videosfinal").append("------------------</br>")
+						}
+					})					
+				},
+				error: function() {
+					alert('error!');
+				}
+			});
+		}
+	</script>
+
+	<!--codigo javascript-->
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script>
+		//funcion para mostar contenido oculto
+		function mostrarboton() {
+			var div=document.getElementById("oculto")
+			div.classList.remove("oculto")
+			div.classList.add("visible")
+			var div2=document.getElementById("oculto2")
+			div2.classList.remove("oculto")
+			div2.classList.add("visible")
+		}
+		
+		//funcion para mostar contenido oculto
+		function mostrar() {
+			var cuerpo1=document.getElementById("instrucciones2")
+			cuerpo1.classList.remove("oculto")
+			cuerpo1.classList.add("visible")
+		}
+
+
+	//codigo de la api---------------------------------------------------------------------------------------------------------------------------------------------
+		//funciones de autentificacion
+		function authenticate() {
+			return gapi.auth2.getAuthInstance()
+				.signIn({scope: "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtubepartner"})
+				.then(function() { console.log("Sign-in successful"); },
+					function(err) { console.error("Error signing in", err); });
+		}
+		function loadClient() {
+			gapi.client.setApiKey("AIzaSyDEPtnpMBd6wsA-Vyr49A53H6IbAiPxY7E");
+			return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+				.then(function() { console.log("GAPI client loaded for API"); },
+					function(err) { console.error("Error loading GAPI client for API", err); });
+		}
+		gapi.load("client:auth2", function() {
+					gapi.auth2.init({client_id: "633491919684-lul1d9bfcvfojvemroe0l2do5jrkmibs.apps.googleusercontent.com"});
+				});
+
+
+		//funcion que obtiene un json con la lista de reproduccion del usuario logueado
+		function execute() {
+			var request = gapi.client.youtube.playlists.list({
+				mine: true,
+			part: 'contentDetails,snippet'
+			})
+			request.execute(function(response) {
+				//console.log(response2)
+				//imprime el json obtenido por la api de forma legible para que se pueda copiar
+				document.getElementById("listareproduccion").innerHTML = JSON.stringify(response, undefined, 2);
+			});
+		}
+		
+		
+		//funcion que obtiene el id de la lista de me gusta y luego hace otra consulta para obtener los videos d la lista me gusta pasandole ese id y lo muetra en json
+		function execute1() {
+			var request1 = gapi.client.youtube.channels.list({
+			// mine: true indicates that we want to retrieve the channel for the authenticated user.
+			mine: true,
+			part: 'contentDetails'
+			});
+			request1.execute(function(response1) {
+			playlistId = response1.result.items[0].contentDetails.relatedPlaylists.uploads;
+			//console.log(response1)
+
+			var request2 = gapi.client.youtube.playlistItems.list({
+			playlistId: playlistId,
+			part: 'snippet',
+			});
+			request2.execute(function(response2) {
+				//console.log(response2)
+				//imprime el json obtenido por la api de forma legible para que se pueda copiar
+				document.getElementById("videossubidos").innerHTML = JSON.stringify(response2, undefined, 2);
+			});
+			});
+		}
+
+	</script>
+</body>
+</html>

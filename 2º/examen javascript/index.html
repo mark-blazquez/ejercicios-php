@@ -1,0 +1,156 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>examen</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	
+	<script>
+		//funcion pestañas	
+		$( function() {
+			$("#tabs").tabs();
+		} );
+		
+	</script>
+
+	
+</head>
+<body>
+	<div>
+		<form action="" method="POST" name="formulario"></form>
+			<label >grupos y cursos:</label>
+			<select id="curso" name="curso">
+				<option selected="selected">seleccionar curso</option>
+				<option onclick="comprobar()" name="1asir">1asir</option>
+				<option name="2asir">2asir</option>
+			</select>
+			<!--<input  type="submit" onclick="comprobar()" value="seleciona un curso" >-->
+		</form>
+	</div>
+
+	<div id="tabs">
+		<ul>
+		  <li><a href="#tabs-1">evaluacion</a></li>
+		  <li><a href="#tabs-2">ausencias </a></li>
+		</ul>
+
+		<div id="tabs-1">
+			<div id='alumnos'></div>
+			<button>guardar</button>
+		</div>
+
+		<div id="tabs-2">
+			<div id='ausencias'></div>
+		</div>
+		
+	</div>
+
+	<div id='notas'></div>
+
+	<script>
+		//funcion que comprueba que curso es
+		function comprobar(){
+			var curso=document.getElementById("curso").value
+			if(curso=="1asir"){
+				llamada1()
+			}else{
+				llamada2()
+			}
+		}
+		//funcion ajax
+		function llamada1(){
+			$.ajax({
+				type: "GET",
+				url:'http://localhost:8080/ejer/2%c2%ba/examen%20javascript/curso1.xml',
+				//plesk 
+				//url:'https://markblazquez.informaticailiberis.com/curso1.xml',
+				dataType: "xml",
+				success: function(respuesta) {
+					alert('funciona');
+
+					$("#alumnos").replaceWith("<div id='alumnos'></div>")
+					$("#ausencias").replaceWith("<div id='ausencias'></div>")
+					//creo la tabla fuera del bucle para que el titulo salga solo una vez
+					$("#ausencias").append("<div><table id='tabla'></table></div>");
+					$("#ausencias").append("<button>guardar</button>");
+					$("#tabla").append("<tr><td style='background-color:green;'>nombres y apellidos</td><td style='background-color:green;'>justificadas</td><td style='background-color:green;'>injustificadas</td><td style='background-color:green;'>retraso</td></tr>");
+
+					$(respuesta).find("ALUMNO").each(function () {
+						
+						var nombre =$(this).find('NOMBRE').text()+'</br>';
+						var redes =$(this).find('REDES').text()+'</br>';
+						var equipos =$(this).find('EQUIPOS').text()+'</br>';
+						var fol =$(this).find('FOL').text()+'</br>';
+						var sistemas =$(this).find('SISTEMAS').text()+'</br>';
+						//creo el div acordeon e inserto sus datos
+						$("#alumnos").append("<div class='accordion'><h3>"+nombre+"</h3><div><table><tr><td style='background-color:green;'>redes</td><td style='background-color:green;'>equipos</td><td style='background-color:green;'>fol</td><td style='background-color:green;'>sistemas</td><td></td></tr><tr><td style='background-color:grey;'>"+redes+"</td><td style='background-color:grey;'>"+equipos+"</td><td style='background-color:grey;'>"+fol+"</td><td style='background-color:grey;'>"+sistemas+"</td><td style='background-color:grey;'><button type='button' onclick= modificarnotas()>modificar notas</td></tr></table></div></div>")
+					
+						$('.accordion').accordion({
+							collapsible: true,
+							heightStyle: "content"
+						});
+						
+						//meto los nombres en la tabla de ausencias
+						$("#tabla").append("<tr><td style='background-color:grey;'>"+nombre+"</td><td style='background-color:grey;'><form><input required type='radio'></td><td style='background-color:grey;'><input type='radio'></td><td style='background-color:grey;'><input type='radio'></form></td></tr>");
+						
+					});
+				},
+				error: function() {
+					alert('error!');
+				},
+			})
+		}
+		function llamada2(){
+			$.ajax({
+				type: "GET",
+				url:'http://localhost:8080/ejer/2%c2%ba/examen%20javascript/curso2.xml',
+				//plesk 
+				//url:'https://markblazquez.informaticailiberis.com/curso2.xml',
+				dataType: "xml",
+				success: function(respuesta) {
+					alert('funciona');
+					$("#alumnos").replaceWith("<div id='alumnos'></div>")
+					$("#ausencias").replaceWith("<div id='ausencias'></div>")
+					//creo la tabla fuera del bucle para que el titulo salga solo una vez
+					$("#ausencias").append("<div><table id='tabla'></table></div>");
+					$("#ausencias").append("<button>guardar</button>");
+					$("#tabla").append("<tr><td style='background-color:green;'>nombres y apellidos</td><td style='background-color:green;'>justificadas</td><td style='background-color:green;'>injustificadas</td><td style='background-color:green;'>retraso</td></tr>");
+
+					$(respuesta).find("ALUMNO").each(function () {
+						
+						var nombre =$(this).find('NOMBRE').text()+'</br>';
+						var redes =$(this).find('REDES').text()+'</br>';
+						var equipos =$(this).find('EQUIPOS').text()+'</br>';
+						var fol =$(this).find('FOL').text()+'</br>';
+						var sistemas =$(this).find('SISTEMAS').text()+'</br>';
+						//creo el div acordeon e inserto sus datos
+						$("#alumnos").append("<div class='accordion'><h3>"+nombre+"</h3><div><table><tr><td style='background-color:green;'>redes</td><td style='background-color:green;'>equipos</td><td style='background-color:green;'>fol</td><td style='background-color:green;'>sistemas</td><td></td></tr><tr><td style='background-color:grey;'>"+redes+"</td><td style='background-color:grey;'>"+equipos+"</td><td style='background-color:grey;'>"+fol+"</td><td style='background-color:grey;'>"+sistemas+"</td><td style='background-color:grey;'><button type='button' onclick= modificarnotas()>modificar notas</td></tr></table></div></div>")
+					
+						$('.accordion').accordion({
+							collapsible: true,
+							heightStyle: "content"
+						});
+						
+						//meto los nombres en la tabla de ausencias
+						$("#tabla").append("<tr><td style='background-color:grey;'>"+nombre+"</td><td style='background-color:grey;'><form><input required type='radio'></td><td style='background-color:grey;'><input type='radio'></td><td style='background-color:grey;'><input type='radio'></form></td></tr>");
+						
+					});
+				},
+				error: function() {
+					alert('error!');
+				},
+			})
+		}
+		function modificarnotas(){
+			//con el componente de jquery hace un cuadro de dialogo
+			$("#notas").append("<div class='dialog' title='modificar calificaciones'><p>redes: <input type='text'></p><p>equipos: <input type='text'></p><p>sistemas: <input type='text'></p><p>fol: <input type='text'></p><input type='submit' value='aceptar'><input type='reset' value='cancelar'></div>")
+			$(".dialog").dialog();
+		}
+	</script>
+</body>
+</html>

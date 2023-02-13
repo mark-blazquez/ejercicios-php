@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ejer2</title>
+	</head>
+	<body>
+		<table style="width: 100%;" >
+			<tr id="fila1" onmouseenter="colorear1()">
+			  <th>Firstname</th>
+			  <th>Lastname</th>
+			  <th>Age</th>
+			</tr>
+			<tr id="fila2" onmouseenter="colorear2()">
+			  <td>Jill</td>
+			  <td>Smith</td>
+			  <td>50</td>
+			</tr>
+			<tr id="fila3" onmouseenter="colorear3()">
+			  <td>Eve</td>
+			  <td>Jackson</td>
+			  <td>94</td>
+			</tr>
+		</table>
+		<script>
+			var fila1=document.getElementById("fila1")
+			var fila2=document.getElementById("fila2")
+			var fila3=document.getElementById("fila3")
+			function colorear1(){
+				fila1.style.backgroundColor = "red";
+			}
+			function colorear2(){
+				fila2.style.backgroundColor = "yellow";
+			}
+			function colorear3(){
+				fila3.style.backgroundColor = "orange";
+			}
+		</script>
+	</body>
+</html>

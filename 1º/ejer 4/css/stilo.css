@@ -1,0 +1,39 @@
+.oculto {
+	display: none;
+	text-align: center;
+} 
+.visible {
+ 	display: block;
+ 	text-align: center;
+}
+.menu{
+text-align: center;
+}
+.titulo{
+	text-align: center;
+}
+.boton{
+	background-color: black;
+	color: red;
+}
+button{
+	background-color: black;
+	color: red;
+	text-align: center;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+	padding: 30px;
+}
+a:hover{
+	text-decoration: underline red;
+	color: red;
+}
+
+footer{
+	background-color: black;
+	color: white;
+	text-align: center;
+}

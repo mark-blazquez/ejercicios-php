@@ -1,0 +1,437 @@
+/*MOVIL*/
+
+@media only screen and (min-width: 0px) and (max-width:576px){
+	h1{font-family: 'Lemonada', cursive}
+	h2{font-family: 'Montserrat', sans-serif;}
+	h3{font-family: 'Sriracha', cursive;}
+	p{font-family: 'Odibee Sans';}
+	header{
+		color: white;
+	}
+	footer{
+		color: white;
+		background-color: black;
+	}
+	.cabecera{
+		display: flex;
+		background-color: black;
+	}
+	.foto{
+		width: 25%;
+	}
+	.logo{
+		max-width: 100%;
+  		height: auto;
+	}
+	.menu{
+		width: 75%;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		align-items: center;
+	}
+	a:hover{
+  		color: red;
+	}
+	
+ 	.fa-facebook-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+	 .fa-twitter-square {
+		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	.fa-google-plus-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	.fa-linkedin-square {
+		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	footer{
+ 		display: grid;
+ 		grid-template-columns: 1fr 1fr ;
+ 		grid-template-rows: 1fr;
+ 	}
+ 	.avisos{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	.redes{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	h1{
+ 		text-align: center;
+ 	}
+ 	.cuerpo{
+ 		display: grid;
+ 		grid-template-columns: 1fr;
+ 		grid-template-rows: 1fr 1fr;
+ 		text-align: center;
+ 	}
+ 	.tipo{
+ 		text-align: center;
+ 		border: 2px solid red;
+  		border-radius: 25px;
+  		margin: 5px;
+  		background-color: gray;
+ 	}
+ 	img{
+ 		width: 250px;
+ 		height: 100px;
+ 	}
+ 	.rojo{
+ 		display: none;
+ 	}
+ 	.icon{
+ 		text-align: center;
+ 	}
+ 	input:invalid {
+  		border: 2px dashed red;
+	}
+	input:valid {
+  		border: 2px solid green;
+	}
+	iframe{
+		width: 250px;
+		height: 100px;
+	}
+	.gallery {
+	  	display: none;
+	}
+}
+/*TABLET*/
+@media only screen and (min-width: 577px) and (max-width:992px){
+	h1{font-family: 'Sriracha', cursive;}
+	h2{font-family: 'Sriracha', cursive;}
+	h3{font-family: 'Sriracha', cursive;}
+	p{font-family: 'Odibee Sans', cursive;}
+	header{
+		color: white;
+	}
+	footer{
+		color: white;
+		background-color: black;
+	}
+	.cabecera{
+		display: flex;
+		background-color: black;
+	}
+	.foto{
+		width: 25%;
+	}
+	.logo{
+		max-width: 100%;
+  		height: auto;
+	}
+	.menu{
+		width: 75%;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		align-items: center;
+	}
+	a:hover{
+  		color: red;
+	}
+ 	.fa-facebook-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+	 .fa-twitter-square {
+		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	.fa-google-plus-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	footer{
+ 		display: grid;
+ 		grid-template-columns: 1fr 1fr ;
+ 		grid-template-rows: 1fr;
+ 	}
+ 	.avisos{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	.redes{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	h1{
+ 		text-align: center;
+ 	}
+ 	.cuerpo{
+ 		display: grid;
+ 		grid-template-columns: 1fr;
+ 		grid-template-rows: 1fr 1fr;
+ 		text-align: center;
+ 	}
+ 	.tipo{
+ 		text-align: center;
+ 		border: 2px solid red;
+  		border-radius: 25px;
+  		margin: 5px;
+  		background-color: gray;
+ 	}
+ 	img{
+ 		width: 500px;
+ 		height: 200px;
+ 	}
+ 	.icon{
+ 		display: none;
+ 	}
+ 	input:invalid {
+  		border: 2px dashed red;
+	}
+	input:valid {
+  		border: 2px solid green;
+	}
+	.gallery {
+	 	display: none;
+	}
+}
+/*PC*/
+@media only screen and (min-width: 993px){
+	h1{font-family: 'Sriracha', cursive;}
+	h2{font-family: 'Sriracha', cursive;}
+	h3{font-family: 'Sriracha', cursive;}
+	p{font-family: 'Odibee Sans', cursive;}
+	header{
+		color: white;
+	}
+	footer{
+		color: white;
+		background-color: black;
+	}
+	.cabecera{
+		display: flex;
+		background-color: black;
+	}
+	.foto{
+		width: 25%;
+	}
+	.logo{
+		max-width: 100%;
+  		height: auto;
+	}
+	.menu{
+		width: 75%;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		align-items: center;
+	}
+	a:hover{
+  		color: red;
+	}
+ 	.fa-facebook-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+	 .fa-twitter-square {
+		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	.fa-google-plus-square {
+ 		font-size: 100px;
+ 		color: gray;
+ 	}
+ 	footer{
+ 		display: grid;
+ 		grid-template-columns: 1fr 1fr ;
+ 		grid-template-rows: 1fr;
+ 	}
+ 	.avisos{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	.redes{
+ 		align-self: center;
+ 		align-items: center;
+ 		text-align: center;
+ 	}
+ 	h1{
+ 		text-align: center;
+ 	}
+ 	.cuerpo{
+ 		display: grid;
+ 		grid-template-columns: 1fr 1fr ;
+ 		grid-template-rows: 1fr;
+ 		text-align: center;
+ 	}
+ 	.tipo{
+ 		text-align: center;
+ 		border: 2px solid red;
+  		border-radius: 25px;
+  		margin: 5px;
+  		background-color: gray;
+ 	}
+ 	img{
+ 		width: 450px;
+ 		height: 200px;
+ 	}
+ 	.icon{
+ 		display: none;
+ 	}
+ 	input:invalid {
+  		border: 2px dashed red;
+	}
+	input:valid {
+  		border: 2px solid green;
+	}
+	.gallery {
+	  	text-align: center;
+ 		border: 2px solid red;
+  		border-radius: 25px;
+  		margin: 5px;
+  		background-color: gray;
+	  	overflow: hidden;
+	}
+
+	.gallery:before,
+	.gallery:after {
+	  display: block;
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  width: 20%;
+	  height: 100%;
+	  z-index: 3;
+	}
+	.gallery__stream {
+	  position: relative;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  width: 100%;
+	  height: 100%;
+	}
+
+	.gallery__item {
+	  position: absolute;
+	  width: 400px;
+	  height: 200px;
+	  transition: 1s all ease;
+	  background-size: cover;
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  border-radius: 5px;
+	}
+
+	.gallery__item:nth-child(1) {
+	  left: 0;
+	  z-index: 1;
+	  transform: translateX(-100%) scale(.8);
+	}
+
+	.gallery__item:nth-child(2) {
+	  left: 0;
+	  z-index: 2;
+	  transform: translateX(-50%) scale(.8);
+	}
+
+	.gallery__item:nth-child(3) {
+	  left: 50%;
+	  z-index: 4;
+	  transform: translateX(-50%) scale(1);
+	}
+
+	.gallery__item:nth-child(4) {
+	  left: 100%;
+	  z-index: 2;
+	  transform: translateX(-50%) scale(.8);
+	}
+
+	.gallery__item:nth-child(n+5) {
+	  left: 100%;
+	  z-index: 1;
+	  transform: scale(.8);
+	}
+
+	/* Controllers */
+
+	.gallery__prev,
+	.gallery__next {
+	  position: absolute;
+	  top: 50%;
+	  z-index: 4;
+	  width: 50%;
+	  height: 100%;
+	  transform: translateX(-50%) translateY(-50%) scale(.8);
+	  cursor: pointer;
+	}
+
+	.gallery__prev {
+	  left: 0;
+	}
+
+	.gallery__next {
+	  left: 100%;
+	}
+
+	/* Backgrounds */
+
+	.bg-1 {
+	  background-image: url(https://i.ytimg.com/vi/9HFZVpWl70c/maxresdefault.jpg);
+	}
+
+	.bg-2 {
+	  background-image: url(https://www.canalcar.es/themes/canalcar/img/chevrolet-bel-air.jpg);
+	}
+
+	.bg-3 {
+	  background-image: url(https://images4.alphacoders.com/224/224618.jpg);
+	}
+
+	.bg-4 {
+	  background-image: url(https://p1.pxfuel.com/preview/441/271/789/auto-classic-nostalgic-chevrolet.jpg);
+	}
+
+	.bg-5 {
+	  background-image: url(https://p4.wallpaperbetter.com/wallpaper/921/555/577/mazda-rx-7-sports-car-red-cars-wallpaper-f0d9fe031b619d7ac01037ce88641b5d.jpg);
+	}
+
+	.bg-6 {
+	  background-image: url(https://i.pinimg.com/originals/68/f5/b6/68f5b668dc592fc3e5f5697ed46e3001.jpg);
+	}
+
+	.bg-7 {
+	  background-image: url(https://i.pinimg.com/originals/10/48/e0/1048e0446140f20f2ffcc5d3af371161.jpg);
+	}
+
+	.bg-8 {
+	  background-image: url(https://i.pinimg.com/originals/38/10/ef/3810ef4b3c4b08a502685c79ab71412d.jpg);
+	}
+	table{
+		margin: 0 auto;
+		text-align: center;
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	td{
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	tr{
+		border-collapse: collapse;
+		border: 1px solid black;
+	}
+	table {
+        border-collapse:collapse;
+      }
+}

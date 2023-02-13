@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vehiculosclasicos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="./css/stilo.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/animate.css">
+	<link rel="shortcut icon" type="image/ico" href="./img/logo.ico"/>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Lemonada&display=swap');
+	</style>
+</head>
+<body>
+	<header>
+		<div class="cabecera">
+			<div class="foto">
+				<img class="logo" src="./img/logo.jfif">
+			</div>
+			<div class="menu">
+				<a href="index.html"><h1>CLASSIC CAR</h1></a> 
+				<div class="icon"><i class="fa fa-bars"></i></div>
+				<a class="rojo" ><h2 href="japoneses.html">Japoneses</h2></a>
+				<a class="rojo" href="americanos.html"><h2>Americanos</h2></a>
+				<a class="rojo"><h2 >Contacto</h2></a>
+			</div>
+			</div>
+		</div>
+	</header>
+	<div class="cuerpo">
+		<div class="tipo">
+			<h3>Ubicacion</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12714.004622158593!2d-3.7199610471725464!3d37.188324372973305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1580976488328!5m2!1ses!2ses" width="200" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+		</div>
+		<div class="tipo">
+			<form action="entrega.php"method="POST">
+				<h3>SUSCRIBETE A NUESTRA NEWSLETTER</h3>
+				<p>utiliza mayusculas donde debas </br>
+				la contraseña debe de tener min 8 caracteres, max 15 ,al menos una mayuscula, una minuscula, un numero,no espacios en blanco,y caracter un especial</p>
+				<input type="text"  name="nombre" placeholder="introduce tu nombre"required /><br/>
+				<input type="text"  name="apellido" placeholder="introduce tu apellido"required /><br/>
+				<input type="tel"  name="telefono" placeholder="numero movil" required minlength="9" maxlength="9"/><br/>
+	  			<input type="text"  name="email" placeholder="correo electronico " required /><br/>
+	  			<input type="password"  name="contraseña" placeholder="introduce tu contraseña"required minlength="8" maxlength="15" a/><br/>
+	  			<input type="number"  name="dni" placeholder=" dni"required max="99999999" min="00000001" /><br/>
+	  			<input type="text"  name="direccion" placeholder="introduce tu direccion"required /><br/>
+	  			<input type="text"  name="provincia" placeholder="introduce tu provincia"required /><br/>
+	  			<input type="number"  name="codigo" placeholder=" codigo postal"required max="52999" min="01000" /><br/>
+	  			<input type="text"  name="localidad" placeholder="introduce tu localidad"required /><br/>
+	  			<input type="date"  name="fecha" placeholder="fecha nacimiento"required /><br/>
+	  			<select name="opcion" required >
+					<option  value="" selected="true" disabled="disabled select">estado civil</option>
+					<option  value="casado" >casado</option>
+					<option  value="divorciado" >divorciado</option>
+					<option  value="viudo" >viudo</option>
+					<option  value="soltero" >soltero</option>
+				</select></br>
+				
+				<input type="submit" name="submit">
+			</form>
+		</div>
+		<div class="tipo">
+			<h3>Video</h3>
+			<iframe width="500" height="300" src="https://www.youtube.com/embed/Jykx5fSi73I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<div class="gallery">
+			<h3>Galeria de Imagenes</h3>
+		  		
+		  		<div class="gallery__next"></div>
+		  		<div class="gallery__stream">
+					<div class="gallery__item bg-1"></div>
+					<div class="gallery__item bg-2"></div>
+					<div class="gallery__item bg-3"></div>
+					<div class="gallery__item bg-4"></div>
+					<div class="gallery__item bg-5"></div>
+					<div class="gallery__item bg-6"></div>
+					<div class="gallery__item bg-7"></div>
+					<div class="gallery__item bg-8"></div>
+		  		</div>
+		</div>
+	</div>
+	<footer>
+		<div class="redes">
+			<h3>Nuestras redes sociales</h3>
+			<a href="https://www.facebook.com/usuario "target="_blank" class="fa fa-facebook-square"></a>
+	 		<a href="https://twitter.com/usuario" target="_blank" class="fa fa-twitter-square"></a>
+	 		<a href="https://plus.google.com/usuario" target="_blank" class="fa fa-google-plus-square"></a>
+		</div>
+		<div class="avisos">
+			<li><a href="">AVISOS LEGALES</a></li> 
+			<li><a href="">POLÍTICA DE COOKIES</a></li>
+			<li><a href="">POLÍTICA DE PRIVACIDAD</a></li>
+			<li><a href="">AVISO LEGAL</a></li>
+		</div>
+	</footer>
+ 	<script>
+        $(function() {
+            //Captura del evento para mostrar u ocultar
+            $(".icon").click(function() {
+				$(".rojo").toggle();
+            });
+			
+            $(window).resize(function() {
+				var anchura = $(this).width();
+				if (anchura > 576) {
+					$(".rojo").show();
+            	}
+            });
+        });
+    </script>
+    <script type="text/javascript">
+    	document.addEventListener('DOMContentLoaded', function() {
+		  var stream = document.querySelector('.gallery__stream');
+		  var items = document.querySelectorAll('.gallery__item');
+		  var prev = document.querySelector('.gallery__prev');
+		  var next = document.querySelector('.gallery__next');
+
+		  prev.addEventListener('click', function() {
+		    stream.insertBefore(items[items.length - 1], items[0]);
+		    items = document.querySelectorAll('.gallery__item');
+		  });
+
+		  next.addEventListener('click', function() {
+		    stream.appendChild(items[0]);
+		    items = document.querySelectorAll('.gallery__item');
+		  });
+		});
+    </script>
+</body>
+</html>

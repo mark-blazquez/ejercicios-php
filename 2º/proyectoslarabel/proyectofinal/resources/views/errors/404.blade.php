@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <title>proyectoinica</title>
+	</head>
+	
+	<body>
+		<!--la cabecera importada-->
+		@component('componentes.cabeceraadmin')	
+		@endcomponent
+		<div class="container">
+			<div class="d-flex justify-content-center">
+				<img src="https://www.las2orillas.co/wp-content/uploads/2015/05/gato-100-millones.jpg">
+			</div>
+			<div class="alert alert-danger" role="alert">
+				<div class="d-flex justify-content-center">
+					<p>ha sucedido un error inesperado vuelve a la pagina de incio</p>
+				</div>
+
+				<div class="d-flex justify-content-center">
+					<button class="btn">
+						<a href="https://markblazquez.informaticailiberis.com/laravel/proyectofinal/public/home" class="alert-link">volver a inicio</a>
+					</button>
+				</div>
+		
+			</div>
+		</div>
+		
+		<!--script de bootstrap-->
+		<script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+		<script>
+			$(function () {
+				$('[data-toggle="popover"]').popover()
+			});
+		</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+	</body>
+</html>

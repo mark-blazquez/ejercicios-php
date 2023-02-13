@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejer1</title>
+</head>
+<body>
+    </noscript>
+    <script>
+        var num1=prompt("introduce numero1")  
+        var num2=prompt("introduce numero2")  
+        var num3=prompt("introduce numero3")  
+        var num4=prompt("introduce numero4")  
+        var num5=prompt("introduce numero5")
+        var num6=prompt("introduce numero6")  
+        var num7=prompt("introduce numero7")  
+        var num8=prompt("introduce numero8")  
+        var num9=prompt("introduce numero9")  
+		var num10=prompt("introduce numero10")
+		var positivos=[]
+		var negativos=[]
+		var pares=[]
+		var impares=[]
+		var numeros=[num1,num2,num3,num4,num5,num6,num7,num8,num9,num10]
+		for(var i=0;i<=10;i++){
+			if(numeros[i]>0){
+				let nuevaLongitud=positivos.push(numeros[i])
+			}else{
+				let nuevaLongitud=negativos.push(numeros[i])
+			}
+
+			if(numeros[i]%2===0){
+				let nuevaLongitud=pares.push(numeros[i])
+			}else{
+				let nuevaLongitud=impares.push(numeros[i])
+			}
+		}
+		let suma = pares.reduce((previous, current) => current += previous)
+		var division=pares.length
+		var media =suma /= division
+		
+		document.write("estos son los positivos "+positivos,"</br>")
+		document.write("estos son los negativos "+negativos,"</br>")
+		document.write("estos son los pares "+pares,"</br>")
+		document.write("estos son los impares "+impares,"</br>")
+		document.write("esto es la media de los numeros pares "+media,"</br>")
+            
+    </script>
+</body>
+</html>             

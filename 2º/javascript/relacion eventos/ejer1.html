@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ejer1</title>
+		<script>
+			function comprobar(){
+				var nombre=document.getElementById("nombre").value
+				var edad=document.getElementById("edad").value
+				var mail=document.getElementById("mail").value
+				if(nombre.length==0 ||mail.length==0 ||edad.length==0){
+					alert("te falta algun dato por introducir")
+				}
+			}
+			function comprobarnombre(){
+				var nombre=document.getElementById("nombre")
+				nombre.setAttribute('value','')
+				
+			}
+			function desenfoque1(){
+				var nombre1=document.getElementById("nombre").value
+				if (nombre1.length==0){
+					alert("el campo nombre esta vacio")
+				}
+			}
+			function comprobaredad(){
+				var edad=document.getElementById("edad")
+				edad.setAttribute('value','')
+				
+			}
+			function desenfoque2(){
+				var edad1=document.getElementById("edad").value
+				if (edad1.length==0){
+					alert("el campo edad esta vacio")
+				}
+			}
+			function comprobarmail(){
+				var mail=document.getElementById("mail")
+				mail.setAttribute('value','')
+				
+			}
+			function desenfoque3(){
+				var mail1=document.getElementById("nombre").value
+				if (mail1.length==0){
+					alert("el campo mail esta vacio")
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" method="POST" name="formulario" onsubmit="return comprobar();">
+            <input id="nombre" type="text" value="nombre" onfocus="comprobarnombre();"  onblur="desenfoque1()" >
+			<input id="edad" type="text" value="edad" onfocus="comprobaredad();" onblur="desenfoque2()" >
+			<input id="mail" type="text" value="mail" onfocus="comprobarmail()" onblur="desenfoque3()" >
+            <input type="submit"></input>
+        </form>
+	</body>
+</html>

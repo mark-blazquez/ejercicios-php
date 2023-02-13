@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ejer3</title>
+		<style>
+			.esquinasredondas{
+				border: 2px solid black;
+				padding: 10px;
+				border-radius: 20px;
+				margin: 1em;
+			}
+			.esquinasnormal{
+				border: 2px solid black;
+				padding: 10px;
+				margin: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<div  ondblclick="doble()" style="border: 2px solid black;">
+			<sp id="numero">2</sp>  
+		</div>
+		<div id="cuadrado" class="esquinasnormal" onmousemove="cambio1()" onmouseout="cambio2()">
+			div segundo que cambia las esquinas cada vez que entras y sales 
+		</div>
+		<script>
+		var numero1=2
+			function doble(){
+				document.getElementById("numero").innerHTML = numero1*=2;
+			}
+			function cambio1(){
+				var cuadrado=document.getElementById("cuadrado")				
+				cuadrado.classList.add("esquinasredondas")
+				cuadrado.classList.remove("esquinasnormal")
+					
+			}
+			function cambio2(){
+				var cuadrado=document.getElementById("cuadrado")
+				cuadrado.classList.remove("esquinasredondas")
+				cuadrado.classList.add("esquinasnormal")
+			}
+		</script>
+	</body>
+</html>

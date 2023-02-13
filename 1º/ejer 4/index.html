@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejer4</title>
+	<meta charset="utf-8">
+	<meta name="viewport content="width=device-width, initial-scale=1.0>
+	<script type="text/javascript"> 
+	function muestra(capa) { 
+		var capas = document.getElementsByTagName("div")
+		for(var i=0; i<capas.length; i++) { 
+		   	 if(capas[i].className == "elemento_menu visible") 
+				capas[i].className = "elemento_menu oculto"; 
+			 }
+		var elemento = document.getElementById(capa); 
+		elemento.className = "elemento_menu visible"; 
+	} 
+	</script>
+	<link rel="shortcut icon" type="image/ico" href="./imagenes/cloud.ico"/>
+	<link rel="stylesheet" type="text/css" href="./css/stilo.css">
+</head>
+<header>
+	<div class="titulo">
+		<h1>EJERCICIO 4 </h1>
+	</div>
+	<div class="menu" id="menu-horizontal">
+		<ul>
+			<a href="#" onclick="muestra('consultar')">CONSULTAR LIBROS </a>
+			<a href="#" onclick="muestra('añadir')">AÑADIR LIBRO </a>
+			<a href="#" onclick="muestra('borrar')">BORRRAR LIBRO</a>
+			<a href="#" onclick="muestra('actualizar')">ACTUALIZAR LIBRO</a>
+		</ul>
+	</div>
+</header>
+<body>	
+	<div id="consultar" class="elemento_menu visible">
+		<form action="consultar.php" method="POST">
+			<input class="boton" type="submit" name="submit" value="consultar libros">
+		</form>	
+	</div>	
+	<div id="añadir" class="elemento_menu oculto">	
+		<form action="insertar.php" method="POST">
+			<input type="text" name="titulo" placeholder="nombre del libro">
+			<input type="text" name="autor" placeholder="nombre del autor">
+			<input class="boton" type="submit" name="submit" value="añadir libro">
+		</form>
+	</div>
+	<div id="borrar" class="elemento_menu oculto">		
+		<form action="borrar.php" method="POST">
+			<p>para borrar un libro primero consulta su id </p>
+			<input type="text" name="id" placeholder="id del libro">
+			<input class="boton" type="submit" name="submit" value="borrar libro">
+		</form>		
+	</div>
+	<div id="actualizar" class="elemento_menu oculto">		
+		<form action="actualizar.php" method="POST">
+			<p>para actualizar el libro consulta el id primero y a continuacion inserta los valores nuevos </p>
+			<input type="text" name="id" placeholder="id del libro">
+			<input type="text" name="titulo" placeholder="nombre del libro">
+			<input type="text" name="autor" placeholder="nombre del autor">
+			<input class="boton" type="submit" name="submit" value="actualizar libro">
+		</form>	
+	</div>
+</body>
+<footer>
+	<h2>BIBLIOTECAS MARK BLAZQUEZ</h2>
+</footer>
+</html>

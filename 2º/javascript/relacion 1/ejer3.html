@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ejer3</title>
+    <script>
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        function mostrar(){
+            var numdni=document.formulario.numerodni.value
+            var letrdni=document.formulario.letradni.value
+            letrdni=letrdni.toUpperCase();
+            var dni=numdni+letrdni
+            if (numdni<0 || numdni>99999999){
+                alert("el numero que has introducido no es valido")
+            }else{
+                document.write("este es el numero de tu dni "+numdni,"</br>")
+                document.write("esta esa la letra de tu dni "+letrdni,"</br>")
+                document.write("en teoria este es tu dni "+dni,"</br>")
+                var letra1=numdni%23
+                var letra2=letras[letra1]
+                document.write("letra sacada segun tus numeros de dni "+letra2,"</br>")
+                if (letra2===letrdni){
+                    document.write("bien hecho te sabes tu dni","</br>")
+                }else{
+                    document.write("te has equivocado en algun dato","</br>")
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    </noscript>
+    <div>
+        <form action="" name="formulario">
+            <span>introduce tu dni</span> 
+            <input id="numerodni" type="text" placeholder="numero dni" name="numerodni" required>
+            <input id="letradni" type="text" placeholder="letra dni" name="letradni" required>
+            <input type="submit" onclick="mostrar()"></input>
+        </form>
+    </div>
+</body>
+</html>

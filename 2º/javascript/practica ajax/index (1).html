@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ejercicio 1 - Estados de la petición AJAX</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="code.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>
+<body>
+	<form action="#">
+		URL:
+		<input type="text" id="recurso" size="70" />
+		<input type="button" id="enviar" value="Mostrar contenidos" />
+	</form>
+
+	<div id="principal">
+		<h2>Contenidos del archivo:</h2>
+		<div id="contenidos"></div>
+
+		<h2>Cabeceras HTTP de la respuesta del servidor:</h2>
+		<div id="cabeceras"></div>
+	</div>
+
+	<div id="secundario">
+		<h2>Estados de la petición:</h2>
+		<div id="estados"></div>
+
+		<h2>Código de estado:</h2>
+		<div id="codigo"></div>
+	</div>
+	<script>
+		//obtener url 
+		var url = $(location).attr("href");
+		$("#recurso").prop('value',url)
+		//para que al pulsar boton haga la funcion
+		$("#enviar").on("click", mostrar);
+		function mostrar(){
+			var url = $(location).attr("href");
+			$("#recurso").append(url)
+			$.ajax({
+				type: "GET",
+				url:'http://localhost:8080/ejer/2%c2%ba/javascript/practica%20ajax/catalogo.xml',
+				dataType: "xml",
+				success: function(respuesta) {
+					alert('funciona!');
+					$(respuesta).find("CD").each(function () {
+						var titulo =$(this).find('TITLE').text()+'</br>';
+						var autor =$(this).find('ARTIST').text()+'</br>';
+						var pais =$(this).find('COUNTRY').text()+'</br>';
+						var compañia =$(this).find('COMPANY').text()+'</br>';
+						var precio =$(this).find('PRICE').text()+'</br>';
+						var año =$(this).find('YEAR').text()+'</br></br>';
+						$("#contenidos").append("<strong>nombre:</strong>");
+						$("#contenidos").append(titulo);
+						$("#contenidos").append("<strong>autor:</strong>");
+						$("#contenidos").append(autor);
+						$("#contenidos").append("<strong>pais:</strong>");
+						$("#contenidos").append(pais);
+						$("#contenidos").append("<strong>discografica: </strong>");
+						$("#contenidos").append(compañia);
+						$("#contenidos").append("<strong>precio:</strong>");
+						$("#contenidos").append(precio);
+						$("#contenidos").append("<strong>año: </strong>");
+						$("#contenidos").append(año);
+
+					});
+				},
+				error: function() {
+					alert('error!');
+				},
+
+				complete: function(xhr){
+					var cabeceras = $("#cabeceras");
+					cabeceras.append(xhr.getAllResponseHeaders())
+					var estados = $("#estados");
+					if (xhr.readyState==0){
+						var dato = "request not initialized"
+					}else if(xhr.readyState==1){
+						var dato = "server connection established"
+					}
+					else if(xhr.readyState==2){
+						var dato = "request received"
+					}
+					else if(xhr.readyState==3){
+						var dato = "processing request"
+					}else if(xhr.readyState==4){
+						var dato = "request finished and response is ready"
+					}
+					estados.append(xhr.readyState+":"+dato+"</br>")
+					var codigo = $("#codigo");
+					codigo.append(xhr.status+":"+xhr.statusText+"</br>")
+				}
+			});
+		}
+		
+		   
+	</script>
+</body>
+</html>

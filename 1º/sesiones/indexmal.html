@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejer1</title>
+	<link rel="stylesheet" type="text/css" href="stilo.css">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="stilo.css">
+</head>
+<body>
+ 
+<nav class="navbar bg-dark navbar-dark navbar-expand-sm d-flex">
+		<h1 class="text-light mr-auto p-2">tiendas mark</h1>
+
+		<div class="d-flex">
+			<form action="validacion.php" method="POST" >
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					iniciar sesion 
+				</button>
+
+				<div class="modal fade" id="exampleModal" >
+					<div class="modal-dialog" >
+						<div class="modal-content">
+							<div class="modal-header bg-primary">
+							<h5 class="modal-title text-light" id="exampleModalLabel">iniciar sesion</h5>
+							<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<form action="validacion.php" method="POST" >
+								<div class="form-group">
+									<label for="exampleInputEmail1">correo </label>
+									<input type="email" class="form-control"  placeholder="introduce tu correo" required="true" name="correo">
+								</div>
+								
+								<div class="form-group">
+									<label for="exampleInputPassword1">contraseña</label>
+									<input type="password" class="form-control" name="contraseña" placeholder="introduce tu contraseña" required="true">
+								</div>
+								<div class="modal-footer">
+									<input type="submit" class="btn btn-primary" name="inicio">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div>
+			<form action="userregistrado.php" method="POST">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">
+					registrarte
+				</button>
+
+				<div class="modal fade" id="exampleModal1" role="dialog" >
+					<div class="modal-dialog" >
+
+						<div class="modal-content">
+							<div class="modal-header bg-primary text-light">
+								<h5 class="modal-title bg-primary" id="exampleModalLabel1">registro de usuario</h5>
+								<button type="button" class="close text-light" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								
+									<div class="form-group">
+										<label for="exampleInputEmail1">correo </label>
+										<input type="email" class="form-control"  placeholder="introduce tu correo" required="true" name="correo">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword3">contraseña</label>
+										<input type="password" class="form-control" placeholder="introduce tu contraseña" required="true" name="contraseña">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1">nombre</label>
+										<input type="text" class="form-control" placeholder="introduce tu nombre" required="true" name="nombre" >			    	
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1">apellido</label>
+										<input type="text" class="form-control" placeholder="introduce tu apellido" required="true" name="apellido" >			    	
+									</div>
+										<div class="form-group">
+										<label for="exampleInputEmail1">codigo postal</label>
+										<input type="text" class="form-control" placeholder="introduce tu codigo postal" required="true" name="codigo" >			    	
+									</div>
+										<div class="form-group">
+										<label for="exampleInputEmail1">direccion</label>
+										<input type="text" class="form-control" placeholder="introduce tu direccion" required="true" name="direccion" >			    	
+									</div>
+										<div class="form-group">
+										<label for="exampleInputEmail1">numero movil</label>
+										<input type="number" class="form-control" placeholder="introduce tu numero de movil" required="true" name="movil" >			    	
+									</div>	      	
+								
+							</div>
+							<div class="modal-footer">
+								<input type="submit" class="btn btn-primary" value="registrar" name="registro">
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+</nav>
+<div class="container d-flex justify-content-center">
+	<h3 class="text-danger" >sentimos comunicarte que tu usuario o contraseña son incorrectos ,intentalo de nuevo</h3></h3>
+</div>
+<footer class=" bg-dark fixed-bottom">
+	  	<div class="d-flex justify-content-center ">
+	  		<a href="https://www.facebook.com/"><img src="./img/face.png" alt="..." class="img-circle img-fluid" width="50px"></a>
+	  		<a href="https://twitter.com/"><img src="./img/twiter.png" alt="..." class="img-circle img-fluid" width="100px"></a>
+	  		<a href="https://www.linkedin.com/"><img src="./img/link.png" alt="..." class="img-circle img-fluid" width="50px"></a>
+		</div>
+		<div class="d-flex justify-content-center">
+			<h3 class="text-light">@2020 Copyright</h3>
+		</div>
+</footer>
+
+</body>
+</html>
